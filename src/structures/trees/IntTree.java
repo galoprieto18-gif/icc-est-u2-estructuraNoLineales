@@ -12,7 +12,7 @@ public class IntTree {
 
 
     //Constructor
-    public void InteTree() {
+    public IntTree() {
         this.root = null;
         this.peso=0;
     }
@@ -106,9 +106,9 @@ public class IntTree {
             return 0;
 
         int heigthLeft = getHeigthRecursivo(actual.getLeft());
-        int heigthReigth = getHeigthRecursivo(actual.getRight());
+        int heigthRigth = getHeigthRecursivo(actual.getRight());
 
-        int masAlto = Math.max(heigthLeft, heigthReigth);
+        int masAlto = Math.max(heigthLeft, heigthRigth);
         return masAlto+1;
       } 
 
@@ -120,12 +120,14 @@ public class IntTree {
       private int getPesoRecursivo(Node<Integer> actual) {
         if(actual == null)
             return 0;
-        int peso = 0;
-        int heigthLeft = getHeigthRecursivo(actual.getLeft());
-        int heigthReigth = getHeigthRecursivo(actual.getRight());
-
         
-        return 1 + heigthLeft + heigthReigth;
+        int heigthLeft = getHeigthRecursivo(actual.getLeft());
+        int heigthRigth = getHeigthRecursivo(actual.getRight());
+
+        int peso = heigthLeft + heigthRigth ;
+
+        return peso +1;
+        
       } 
 
 }

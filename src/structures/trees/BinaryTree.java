@@ -123,8 +123,9 @@ public class BinaryTree<T extends Comparable<T>>{
         int heigthLeft = getHeigthRecursivo(actual.getLeft());
         int heigthReigth = getHeigthRecursivo(actual.getRight());
 
-        
-        return 1 + heigthLeft + heigthReigth;
+        int peso = heigthLeft + heigthReigth;
+
+        return peso + 1;
       } 
 
 }

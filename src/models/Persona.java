@@ -22,15 +22,17 @@ public class Persona implements Comparable<Persona> {
     public void setEdad(int edad) {
         this.edad = edad;
     }
+    
+    @Override
+    public String toString() {
+        return "Persona [nombre=" + nombre + ", edad=" + edad + "]";
+    }
     @Override
     public int compareTo(Persona otra){
         int compEdad = Integer.compare(this.edad, otra.getEdad());
 
-        if(compEdad !=0)
+        
         return compEdad;
-
-        int compNombre = this.nombre.compareTo(otra.getNombre());
-        return compNombre;
     }
     
 }
