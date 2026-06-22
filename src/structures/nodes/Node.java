@@ -1,43 +1,19 @@
 
 package structures.nodes;
 
-public class Node <T>{
-    
+
+
+public class Node<T> {
     private T value;
     private Node<T> left;
-    private Node<T> rigth;
-
-    //Creo un nodo
-    //Instancio el node -> Constructor
-    // tiene que crearse con el valor 
-
-    public Node (int value){
+    private Node<T> right;
+    //Creo un nodo.
+    //Intancio el nodo -> constructor
+    
+    public Node(T value) {
         this.value = value;
-        this.rigth = null;
-        this.left = null;
-        }
-    
-
-    public Node<T> getLeft() {
-        return left;
-    }
-
-    public void setLeft(Node<T> left) {
-        this.left = left;
-    }
-
-    public Node<T> getRigth() {
-        return rigth;
-    }
-
-    public void setRigth(Node<T> rigth) {
-        this.rigth = rigth;
-    }
-    
-        
-    @Override
-    public String toString() {
-        return "Node [" + value + "]";
+        this.right = null;
+        this.left= null;
     }
 
     public T getValue() {
@@ -47,9 +23,29 @@ public class Node <T>{
     public void setValue(T value) {
         this.value = value;
     }
+
+    public Node<T> getLeft() {
+        return left;
+    }
+
+    public void setLeft(Node<T> left) {
+        this.left = left;
+    }
+
+    public Node<T> getRight() {
+        return right;
+    }
+
+    public void setRight(Node<T> right) {
+        this.right = right;
+    }
+
+    @Override
+    public String toString() {
+        return "Node [value=" + value + "]";
+    }
     
 
 }
-    
 
 
