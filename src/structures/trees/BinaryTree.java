@@ -9,7 +9,6 @@ public class BinaryTree<T extends Comparable<T>>{
   
     // Clase de arbol solo de enteros.
 
-
     //Constructor
     public BinaryTree() {
         this.root = null;

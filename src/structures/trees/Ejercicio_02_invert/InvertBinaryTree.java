@@ -20,23 +20,43 @@ public class InvertBinaryTree {
             return null;
             }
         //IMPRIMIR EL ARBOL
+
+        printTree(root);
         printTreeInvertido(root);
         return root;
     }
     public void printTreeInvertido( Node<Integer> root){
-        System.out.println("Impresion de ARBOL VERTICAL ejericio 3:");
+        System.out.println("Árbol invertido correctamente:");
         printInvertidoRecursivo(root,0);
     }
-    private void printInvertidoRecursivo(Node<Integer> root, int nive1) {
-       
+
+    private void printInvertidoRecursivo(Node<Integer> root, int nivel) {
      if(root == null)
       return;
-    printInvertidoRecursivo(root.getLeft(),nive1+1);
-    for(int i = 0; i < nive1 ; i++){
+    printInvertidoRecursivo(root.getLeft(),nivel+1);
+    for(int i = 0; i < nivel ; i++){
         System.out.print("   ");
     }
     System.out.println(root.getValue());
-    printInvertidoRecursivo(root.getRight(),nive1 + 1);
+    printInvertidoRecursivo(root.getRight(),nivel + 1);
+    
+    }
+
+    public void printTree( Node<Integer> root){
+        System.out.println("Árbol Original :");
+        printTreeRecursivo(root,0);
+    }
+
+    private void printTreeRecursivo(Node<Integer> root, int nivel) {
+       
+     if(root == null)
+      return;
+    printTreeRecursivo(root.getRight(),nivel+1);
+    for(int i = 0; i < nivel ; i++){
+        System.out.print("   ");
+    }
+    System.out.println(root.getValue());
+    printTreeRecursivo(root.getLeft(),nivel + 1);
     
     }
 

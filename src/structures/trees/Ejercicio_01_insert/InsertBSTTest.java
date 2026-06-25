@@ -1,3 +1,4 @@
+
 package structures.trees.Ejercicio_01_insert;
 
 import structures.nodes.Node;
@@ -14,7 +15,7 @@ public class InsertBSTTest {
         Node<Integer> root = tree.getRoot();
             if (root == null){
                 
-            System.out.println("Se encuentra vacío el arbol");
+            System.out.println("Se encuentra vacío el arbol\n");
             return null;
         
         }
@@ -23,23 +24,21 @@ public class InsertBSTTest {
         return root;
     }
 
-        
     public void printTree( Node<Integer> root){
-        System.out.println("Imprimiendo el arbol:");
+        System.out.println("Árbol Original :");
         printTreeRecursivo(root,0);
     }
-    private void printTreeRecursivo(Node<Integer> root, int nive1) {
+    private void printTreeRecursivo(Node<Integer> root, int nivel) {
        
      if(root == null)
       return;
-    printTreeRecursivo(root.getRight(),nive1+1);
-    for(int i = 0; i < nive1 ; i++){
+    printTreeRecursivo(root.getRight(),nivel+1);
+    for(int i = 0; i < nivel ; i++){
         System.out.print("   ");
     }
     System.out.println(root.getValue());
-    printTreeRecursivo(root.getLeft(),nive1 + 1);
+    printTreeRecursivo(root.getLeft(),nivel + 1);
     
     }
-
 }
 

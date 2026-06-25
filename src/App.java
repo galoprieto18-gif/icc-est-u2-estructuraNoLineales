@@ -1,7 +1,4 @@
 
-//import models.Persona;
-//import structures.trees.BinaryTree;
-//import structures.trees.IntTree;
 import java.util.List;
 import structures.nodes.Node;
 import structures.trees.Ejercicio_01_insert.InsertBSTTest;
@@ -12,115 +9,119 @@ import structures.trees.Ejercicio_04_depth.Depth;
 public class App {
 
     public static void main(String[] args) throws Exception {
+      runEjercicios();
+
+    }
+     private static void runEjercicios() {
+      InsertBSTTest ejercicio01 = new InsertBSTTest();
+      InvertBinaryTree ejercicio02 = new InvertBinaryTree();
+      ListLevels listLevels= new ListLevels();
+      Depth ejercicio4 = new Depth();
+
+      int[] numeros = new int[]{5,3,7,2,4,6,8};
+      int[] numeros2 = new int[]{5};
+      int[] numeros3 = new int[]{5,6,7,8,9,10};
+      int[] numeros4 = new int[]{};
+
+      System.out.println("\nEjercicio 01 :\n");
+      System.out.println("\n---------------Árbol lleno---------------\n");
+      ejercicio01.insert(numeros);
+      System.out.println("\n---------------Solo un nodo en el árbol---------------\n");
+      ejercicio01.insert(numeros2);
+      System.out.println("\n---------------Árbol con valores solo en una dirección---------------\n");
+      ejercicio01.insert(numeros3);
+      System.out.println("\n---------------Árbol vacío---------------\n");
+      ejercicio01.insert(numeros4);
+      System.out.println();
+     
+
+      System.out.println("\nEjercicio 02 :\n");
+
+      System.out.println("\n---------------Árbol lleno---------------\n");
+      ejercicio02.insert(numeros);
+      System.out.println("\n---------------Solo un nodo en el árbol---------------\n");
+      ejercicio02.insert(numeros2);
+      System.out.println("\n---------------Árbol con valores solo en una dirección---------------\n");
+      ejercicio02.insert(numeros3);
+      System.out.println("\n---------------Árbol vacío---------------\n");
+      ejercicio02.insert(numeros4);
+      System.out.println();
+     
+
+    System.out.println("Ejercicio 03 :"+ "\n");
+
+    System.out.println("\n---------------Listar niveles (lleno)---------------\n");
+    Node<Integer> root = ejercicio01.insert(numeros);
+    System.out.println();
+    List<List<Node<Integer>>> niveles = listLevels.listLevels(root);
+    imprimirNiveles(niveles);
+    
+    System.out.println("\n---------------Listar niveles con un solo nodo---------------\n");
+    Node<Integer> root2 = ejercicio01.insert(numeros2);
+    System.out.println();
+    List<List<Node<Integer>>> niveles2 = listLevels.listLevels(root2);
+    imprimirNiveles(niveles2);
+     
+    System.out.println("\n---------------Listar niveles en un solo lado---------------\n");
+    Node<Integer> root3 = ejercicio01.insert(numeros3);
+    System.out.println();
+    List<List<Node<Integer>>> niveles3 = listLevels.listLevels(root3);
+    imprimirNiveles(niveles3);
+    
+    System.out.println("\n---------------Listar niveles vacío---------------\n");
+    Node<Integer> root4 = ejercicio01.insert(numeros4);
+    System.out.println();
+    List<List<Node<Integer>>> niveles4 = listLevels.listLevels(root4);
+    imprimirNiveles(niveles4);
+      
+
+    System.out.println("\n"+ "Ejercicio 4 :" );
+
+    System.out.println("\n---------------Árbol lleno---------------\n");
+    int profundidad = ejercicio4.maxDepth(ejercicio01.insert(numeros));
+    System.out.println("Profundidad Máxima = " + profundidad);
+
+    System.out.println("\n---------------Solo un nodo en el árbol---------------\n");
+    int profundidad1 = ejercicio4.maxDepth(ejercicio01.insert(numeros2));
+    System.out.println("Profundidad Máxima = " + profundidad1);
+
+    System.out.println("\n---------------Árbol con valores solo en una dirección---------------\n");
+    int profundidad2  = ejercicio4.maxDepth(ejercicio01.insert(numeros3));
+    System.out.println("Profundidad Máxima = " + profundidad2);
+
+    System.out.println("\n---------------Árbol vacío---------------\n");
+    int profundidad3  = ejercicio4.maxDepth(ejercicio01.insert(numeros4));
+    System.out.println("Profundidad Máxima = " + profundidad3);
+    System.out.println();
+  }
+  
+  public static void imprimirNiveles(List<List<Node<Integer>>> niveles){
+
+    for (List<Node<Integer>> nivel : niveles){
+
+      for(int i=0; i<nivel.size(); i++){
+        System.out.print(nivel.get(i));
+        if (i < nivel.size() -1 ){
+          System.out.print("-->");
+        }
+      }
+      System.out.println();
+   }
+ }
+}
+    
+  
+
+
+
+
+//import models.Persona;
+//import structures.trees.BinaryTree;
+//import structures.trees.IntTree;
+
       //runIntTree();
       //runIntTree2();
       //runBinaryTree();
-      runEjercicios();
-
-
-    }
-
-   //  private static void runIntTree2() {
-   //    IntTree arbolNumeros = new IntTree();
-   //      arbolNumeros.add(50);
-   //      arbolNumeros.add(10);
-   //      arbolNumeros.add(30);
-   //      arbolNumeros.add(60);
-   //      arbolNumeros.add(75);
-   //      arbolNumeros.add(55);
-   //      System.out.println("PreOrden:");
-   //      arbolNumeros.preOrden();
-   //      System.out.println("PostOrden:");
-   //      arbolNumeros.postOrden();
-   //      System.out.println("IntOrden:");
-   //      arbolNumeros.intOrden();
-   //      int altura = arbolNumeros.getHeigth();
-   //      System.out.println("\nAltura:" + altura );
-   //      System.out.println();
-   //      int peso = arbolNumeros.getHeigth();
-   //      System.out.println("Peso O(1): \n" + peso);
-   //      System.out.println("Peso O(1):\n" + arbolNumeros.getPeso());
-   // }
-   //  private static void runBinaryTree() {
-    
-   // BinaryTree<String> arbolStrings = new BinaryTree<>();
-   // BinaryTree<Persona> arbolPersonas = new BinaryTree<>();
-
-   //  System.out.println("Clase BinaryTree:" + "\n");
-
-   //    arbolPersonas.add(new Persona("pablo", 30));
-   //    arbolPersonas.add(new Persona("ana", 25));
-   //    arbolPersonas.add(new Persona("luis", 35));
-   //    arbolPersonas.add(new Persona("maria", 28));
-    
-   //    arbolPersonas.preOrden();
-   // }
-
-     private static void runEjercicios() {
-      InsertBSTTest ejercicio1 = new InsertBSTTest();
-      InvertBinaryTree ejercicio2 = new InvertBinaryTree();
-
-      int [] numero01 = new int[]{};
-      int [] numero02 = new int[]{5};
-      int [] numero03 = new int[]{3,4,5,7};
-      int [] numeros = new int[]{5,3,7,2,4,6,8};
-      ejercicio1.insert(numeros);
-      ejercicio1.insert(numero01);
-      ejercicio1.insert(numero02);
-      ejercicio1.insert(numero03);
-
-      Node root =  ejercicio2.insert(numeros);
-      Node root1 = ejercicio2.insert(numero01);
-      Node root2 = ejercicio2.insert(numero02);
-      Node root3 = ejercicio2.insert(numero03);
-
-      ListLevels listLevels = new ListLevels();
-      List<List<Integer>> niveles = listLevels.listLevels(root);
-      List<List<Integer>> niveles1 = listLevels.listLevels(root1);
-      List<List<Integer>> niveles2 = listLevels.listLevels(root2);
-      List<List<Integer>> niveles3 = listLevels.listLevels(root3);
-     
-      imprimirNiveles(niveles);
-      System.out.println();
-      
-      imprimirNiveles(niveles1);
-      System.out.println();
-
-      imprimirNiveles(niveles2);
-      System.out.println();
-
-      imprimirNiveles(niveles3);
-      System.out.println();
-           
-
-      Depth ejercicio4 = new Depth();
-      int profundidad = ejercicio4.maxDepth(root);
-      System.out.println("Profundidad =" + profundidad);
-      int profundidad01 = ejercicio4.maxDepth(root1);
-      System.out.println("Profundidad =" + profundidad01);
-      int profundidad02 = ejercicio4.maxDepth(root2);
-      System.out.println("Profundidad =" + profundidad02);
-      int profundidad03 = ejercicio4.maxDepth(root3);
-      System.out.println("Profundidad =" + profundidad03);
-
-     }
-  public static void imprimirNiveles(List<List<Integer>> niveles){
-
-      for (List<Integer> nivel : niveles){
-        for(int i=0; i<nivel.size(); i++){
-
-        System.out.print(nivel.get(i));
-
-        if (i < nivel.size() -1 ){
-          System.out.print("-->");
-
-        }
-
-      }
-      System.out.println();
-    }
-  }
-}
 
    
    //  private static void runIntTree() {
@@ -166,3 +167,38 @@ public class App {
    //  }
 
    
+//  private static void runIntTree2() {
+   //    IntTree arbolNumeros = new IntTree();
+   //      arbolNumeros.add(50);
+   //      arbolNumeros.add(10);
+   //      arbolNumeros.add(30);
+   //      arbolNumeros.add(60);
+   //      arbolNumeros.add(75);
+   //      arbolNumeros.add(55);
+   //      System.out.println("PreOrden:");
+   //      arbolNumeros.preOrden();
+   //      System.out.println("PostOrden:");
+   //      arbolNumeros.postOrden();
+   //      System.out.println("IntOrden:");
+   //      arbolNumeros.intOrden();
+   //      int altura = arbolNumeros.getHeigth();
+   //      System.out.println("\nAltura:" + altura );
+   //      System.out.println();
+   //      int peso = arbolNumeros.getHeigth();
+   //      System.out.println("Peso O(1): \n" + peso);
+   //      System.out.println("Peso O(1):\n" + arbolNumeros.getPeso());
+   // }
+   //  private static void runBinaryTree() {
+    
+   // BinaryTree<String> arbolStrings = new BinaryTree<>();
+   // BinaryTree<Persona> arbolPersonas = new BinaryTree<>();
+
+   //  System.out.println("Clase BinaryTree:" + "\n");
+
+   //    arbolPersonas.add(new Persona("pablo", 30));
+   //    arbolPersonas.add(new Persona("ana", 25));
+   //    arbolPersonas.add(new Persona("luis", 35));
+   //    arbolPersonas.add(new Persona("maria", 28));
+    
+   //    arbolPersonas.preOrden();
+   // }
