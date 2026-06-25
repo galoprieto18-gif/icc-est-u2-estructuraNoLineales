@@ -1,17 +1,19 @@
-## **Práctica: Estructura de Lógica con Estructuras no Lineales: Árboles**
 
+## **Práctica: Estructura de Lógica con Estructuras No Lineales: Árboles**
 
-- **Nombre**: Galo Prieto
+**Nombre**: Galo Prieto
 
-- **Fecha de entrega**: 24 de junio del 2026
+**Fecha de entrega**: 24 de junio del 2026
 
-- **Descripción del proyecto:**
+**Curso:** Computación - Grupo 1
 
-En esta práctica se realizó diferentes ejercicios, como ordenar un arbol de derecha a izquiera hasta obtener su forma requerida, también se implemento ordenamiento de forma horizontal y vertical, se realizo métodos de forma recursiva para utilizar en el método de profundad, en este método se aplicó el concepto de colas para desarrollar el método imprimir de niveles. 
+## **Descripción del proyecto:**
 
-## **Explicación del ejericio 1:**
+En esta práctica se realizaron ejercicios como el ordenamiento de un árbol de su forma original, se implementaron métodos recursivos para recorrer y invertir el árbol.También se utilizó el concepto de colas para la impresión por niveles, formando como resultado una cola de niveles, y finalmente se creó un método para comprobar la profundidad máxima del árbol.
 
-En el ejercicio 1 se creó un árbol binario de busqueda a partir de un arreglo de números. Cada valor se asigna con una lista, se inserta utilizando el método add hasta que se forme el árbol.Luego, se verifica con una condición que no esté vacío y se llama al printTree para mostrarlo. La impresión se lo hace mediante un printTreeRecursivo, que reccore el árbol de forma recursiva visitando primero la rama derecha y después la izquierda, permitiendo visualizar correctamente la estructura planteada. 
+## **Explicación del ejercicio 1:**
+
+En el ejercicio 1 se creó un árbol binario de búsqueda a partir de un arreglo de números. Cada valor se inserta en el árbol mediante el método add hasta formar la estructura completa. Luego, se verifica si el árbol está vacío y, en caso contrario, se llama al método printTree para mostrarlo. La impresión se realiza con printTreeRecursivo, el cual recorre el árbol de forma recursiva, visitando primero la rama derecha y luego la izquierda, lo que permite visualizar correctamente su estructura.
 
 - **Método insertar, con su printTree y printTreeRecursivo:**
 
@@ -62,7 +64,7 @@ public class InsertBSTTest {
 
 ## **Explicación del ejercicio 2 :**
 
-Este ejercicio es algo similar al primer ejercicio, en la creación del árbol binario a partir de un arreglo de números enteros.Solamente que cambia es su método printInvertidoRecusrivo, ya que recorre primero el subárbol izquierdo, luego imprime el nodo actual y para culminar recorre el subárbol derecha, hasta llegar a la raíz. Además, utiliza una cantidad de espacios proporcional al nivel de cada nodo para mostrar la estructura del arbol de forma de vertical en la consola. 
+Este ejercicio es algo similar al primer ejercicio, en la creación del árbol binario a partir de un arreglo de números enteros. Solamente lo que cambia es su método printInvertidoRecursivo, ya que recorre primero el subárbol izquierdo, luego imprime el nodo actual y para culminar recorre el subárbol derecha, hasta llegar a la raíz. Además, utiliza una cantidad de espacios proporcional al nivel de cada nodo para mostrar la estructura del arbol de forma de vertical en la consola. 
 
 - **Método invertir, con su printTree y printTreeInvertidoRecursivo:**
 
@@ -132,9 +134,9 @@ public class InvertBinaryTree {
 ```
 
 ## **Explicación del ejercicio 3 :**
-En este ejercicio se realizó un recorrido por niveles utilizando el método listLevels para un árbol binario. Explicando que va a recorrer nivel por nivel hasta visitar todos los nodos,en caso de que el árbol esté vacío, se devuelve una lista vacía. Para la implementación, se utilizó una estructura de cola (Queue) con el fin de ir almacenando temporalmente los nodos,empezando desde la raíz.En cada iteración se obtiene el número de nodos del nivel actual,lo que permite procesar de forma independiente. Mientras se procesan los nodos,los hijos se van a agregar a la cola para ser evaluados en el siguiente nivel. Como resultado, el método va a devolver una lista de listas, en la que cada sublista va a representar el nivel del árbol. 
+En este ejercicio se realizó un recorrido por niveles utilizando el método listLevels para un árbol binario. Debido que va a recorrer nivel por nivel hasta visitar todos los nodos,en caso de que el árbol esté vacío, se devuelve una lista vacía. Para la implementación, se utilizó una estructura de cola (Queue) con el fin de ir almacenando temporalmente los nodos,empezando desde la raíz. En cada iteración se obtiene el número de nodos del nivel actual, lo que permite procesar de forma independiente. Mientras se procesan los nodos,los hijos se van a agregar a la cola para ser evaluados en el siguiente nivel. Como resultado, el método va a devolver una lista de listas, en la que cada sublista va a representar el nivel del árbol. 
 
-- **Método listLevels, para tamaño usando cola(Queue):**
+- **Método listLevels, para el nivel usando cola(Queue):**
 
 ```java
 package structures.trees.Ejercicio_03_listLeves;
@@ -184,7 +186,9 @@ public class ListLevels {
 ```
 
 ## **Explicación del ejercicio 4 :**
-En este ejercicio se implementó el método maxDepth, para calcular la profundidad máxima (altura) de un árbol binario. El método funciona de forma recursiva, es decir, que evalúa primero cada subárbol del lado izquierdo y el subárbol del lado derecho. Si el nodo de cada subárbol es nulo, se devuelve 0, determinando así el caso base. Luego, calcula la profundidad máxima de ambos subárboles y compara cuál subárbol tiene mayor profundidad. Finalmente, se le suma 1 al nivel actual del árbol, obteniendo como resultado su altura máxima. 
+En este ejercicio se implementó el método maxDepth, para calcular la profundidad máxima (altura) del árbol binario. El método funciona de forma recursiva, es decir, que evalúa primero cada subárbol, el lado izquierdo y el subárbol del lado derecho. Si el nodo de cada subárbol es nulo, se devuelve 0, determinando así el caso base. Luego, calcula la profundidad máxima de ambos subárboles y compara cuál subárbol tiene mayor profundidad. Finalmente, se le suma 1 al nivel actual del árbol, obteniendo como resultado su altura máxima. 
+
+- **Método Depth usando Math.max para su profundidad máxima:**
 
 ```java
 package structures.trees.Ejercicio_04_depth;
@@ -263,29 +267,25 @@ public class App {
     System.out.println();
     List<List<Node<Integer>>> niveles = listLevels.listLevels(root);
     imprimirNiveles(niveles);
-    System.out.println();   
-
+       
     System.out.println("\n---------------Listar niveles con un solo nodo---------------\n");
     Node<Integer> root2 = ejercicio01.insert(numeros2);
     System.out.println();
     List<List<Node<Integer>>> niveles2 = listLevels.listLevels(root2);
     imprimirNiveles(niveles2);
-    System.out.println();  
-
+      
     System.out.println("\n---------------Listar niveles en un solo lado---------------\n");
     Node<Integer> root3 = ejercicio01.insert(numeros3);
     System.out.println();
     List<List<Node<Integer>>> niveles3 = listLevels.listLevels(root3);
     imprimirNiveles(niveles3);
-    System.out.println();  
-
+    
     System.out.println("\n---------------Listar niveles vacío---------------\n");
     Node<Integer> root4 = ejercicio01.insert(numeros4);
     System.out.println();
     List<List<Node<Integer>>> niveles4 = listLevels.listLevels(root4);
     imprimirNiveles(niveles4);
-    System.out.println();  
-     
+    
      
     System.out.println("\n"+ "Ejercicio 4 :" );
 
@@ -322,10 +322,12 @@ public class App {
  }
 }
 ```
+**- Observación**:
+En el app validé todos los ejercicios correctamente, además, creé un método imprimirNiveles con los parámetros lista de listas, con el funcionamiento de ir comparando nivel por nivel, es decir, desde la raíz hasta sus ramas y finalmente imprimir cada nivel aplicando un listado de niveles. 
 
 ## **IMPRESIONES A CONSOLA DE LOS EJERCICIOS**
 
-- **Ejercicio 1 :**
+### **Ejercicio 1 :**
 
 ```text
 Ejercicio 01 :
@@ -361,8 +363,12 @@ Ejercicio 01 :
 
 Se encuentra vacío el arbol
 ```
+**- Observación del ejercicio:** 
 
-- **Ejercicio 2 :**
+La clase cumple con el objetivo de insertar elementos y mostrar el árbol resultante correctamente. Además, se visualizan sus cuatro casos correspondientes, verificando el funcionamiento del algoritmo.
+
+
+### **Ejercicio 2:**
 ```text
 Ejercicio 02 :
 
@@ -414,24 +420,64 @@ Ejercicio 02 :
 
 Se encuentra vacío el arbol
 ```
+**- Observación del ejercicio:**
 
-- **Ejercicio 3 :**
+La clase es un poco extensa, pero cumple con el objetivo de mostrar el árbol original y su recorrido invertido de forma correcta. Además, permite visualizar los cuatro casos propuestos, verificando el funcionamiento del algoritmo en diferentes estructuras de árbol.
+
+### **Ejercicio 3 :**
 ```text
 Ejercicio 03 :
 
-Node [value=5]
-Node [value=3]-->Node [value=7]
-Node [value=2]-->Node [value=4]-->Node [value=6]-->Node [value=8]
 
+---------------Listar niveles (lleno)---------------
 
-Node [value=5]
+Árbol Original :
+      8
+   7
+      6
+5
+      4
+   3
+      2
 
-Node [value=3]
-Node [value=4]
-Node [value=5]
-Node [value=7]
+5
+3-->7
+2-->4-->6-->8
+
+---------------Listar niveles con un solo nodo---------------
+
+Árbol Original :
+5
+
+5
+
+---------------Listar niveles en un solo lado---------------
+
+Árbol Original :
+               10
+            9
+         8
+      7
+   6
+5
+
+5
+6
+7
+8
+9
+10
+
+---------------Listar niveles vacío---------------
+
+Se encuentra vacío el arbol
+
 ```
-- **Ejercicio 4 :**
+**- Observación del ejercicio:** 
+
+Este ejercicio es extenso, debido a que recorre el árbol por niveles utilizando una cola para procesar los nodos de forma ordenada. Como resultado, genera una lista de listas donde cada sublista representa un nivel del árbol, lo que permite verificar correctamente el funcionamiento del algoritmo.
+
+### **Ejercicio 4 :**
 ```text
 Ejercicio 4 :
 
@@ -471,24 +517,18 @@ Se encuentra vacío el arbol
 Profundidad Máxima = 0
 
 ```
+**- Observación del ejercicio:** 
 
+Este método es complejo y utiliza una lista de listas para organizar los nodos del árbol por niveles. El proceso inicia en la raíz, que se agrega a una cola como primer nivel, y luego se recorren sus hijos izquierdo y derecho para formar los siguientes niveles de manera progresiva. Este proceso se repite hasta llegar al caso base, agrupando los nodos en sublistas según su nivel. Finalmente, se retorna una lista que contiene todos los niveles del árbol.
 
+### **Conclusiones :**
 
+- Al realizar estos ejercicios, se pudieron obtener muchos conocimientos sobre el funcinamiento de cada elemento dentro de las estructuras no lineales,lo cual me permitió avanzar un poco más en la lógica de programación.
 
+- Al implementar el caso base, es fundamental por la ventaja de detener la ejecución según la condición necesaria, evitando así posibles problemas en el proceso. 
 
+### **Recomendaciones :**
 
+- Siempre tener en cuenta, la comprensión de la recursividad, ya que en varios casos es clave para la implementación de métodos como en estos ejercicios. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Es importante estructurar bien el código para evitar problemas en el proceso. 
